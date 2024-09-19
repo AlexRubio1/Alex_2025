@@ -4,7 +4,7 @@ title: Rubio's Home
 description: Home
 hide: true
 ---
-{% include nav/home.html %}
+{% include _includes/nav/home.html %}
 My journey starts here Alex Rubio!
 
 <!--- Concatenation of site URL to frontmatter image  --->
