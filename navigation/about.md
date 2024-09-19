@@ -38,7 +38,9 @@ div.scroll-container img {
   <img src="../images/about/Rubio1.jpg" alt="Sports Beginning" width="350" height="400">
   <img src="../images/about/Rubio2.jpg" alt="Basketball at age 9" width="350" height="400">
   <img src="../images/about/Rubio3.jpg" alt="The beginning of football" width="600" height="400">
-  <img src="../images/about/Rubio6.jpg" alt="Inseason football" width="500" height="400">
+  <img src="../images/about/Rubio6.jpg" alt="Inseason 
+  football" width="500" height="400">
+   <img src="../images/about/Rubio7.jpg" alt="Inseason football" width="500" height="400">
   <img src="../images/about/Rubio8.jpg" alt="Inseason football" width="300" height="400">
 </div>
 

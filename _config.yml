@@ -4,7 +4,6 @@ owner_name: "Alex Rubio"
 github_username: AlexRubio1
 github_repo: "Alex_2025" 
 baseurl: "/Alex_2025"
-include: [_includes]
 future: true
 remote_theme: "jekyll/minima"
 minima:

@@ -21,6 +21,7 @@ My journey starts here Alex Rubio!
 <!--- Embedded Cascading Style Sheet (CSS) rules, 
         define how HTML elements look 
 --->
+
 <style>
 
   /*CSS style rules for the id and class of the sprite...
@@ -186,4 +187,3 @@ My journey starts here Alex Rubio!
   });
 
 </script>
-
