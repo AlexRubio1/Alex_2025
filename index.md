@@ -7,8 +7,6 @@ hide: true
 {% include nav/home.html %}
 My journey starts here Alex Rubio!
 
-
-
 <!--- Concatenation of site URL to frontmatter image  --->
 {% assign sprite_file = site.baseurl | append: page.image %}
 <!--- Has is a list variable containing mario metadata for sprite --->
