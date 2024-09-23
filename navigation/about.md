@@ -132,10 +132,23 @@ div.scroll-container img {
     }
 </script>
 
+
+<html lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light and Dark Mode</title>
+    <link id="theme-stylesheet" rel="stylesheet" href="light-mode.css">
+    <button id="toggle-theme">Toggle Light/Dark Mode</button>
+    <p>Dark and Light mode</p>
+    <link id="theme-style" rel="stylesheet" href="light-mode.css">
+    <script src="theme-toggle.js"></script>
+  
 <script src="https://utteranc.es/client.js"
-        repo="AlexRubio1/Student_2025"
+        repo="AlexRubio1/Alex_2025"
         issue-term="pathname"
         theme="icy-dark"
         crossorigin="anonymous"
         async>
 </script>
+
+
