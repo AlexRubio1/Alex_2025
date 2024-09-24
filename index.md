@@ -200,4 +200,4 @@ My journey starts here Alex Rubio!
     <link id="theme-style" rel="stylesheet" href="light-mode.css">
     <script src="theme-toggle.js"></script>
   
-
+  <body style="background-color:blue;">
