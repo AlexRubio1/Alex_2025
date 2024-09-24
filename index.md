@@ -194,10 +194,8 @@ My journey starts here Alex Rubio!
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Light and Dark Mode</title>
-    <link id="theme-stylesheet" rel="stylesheet" href="light-mode.css">
     <button id="toggle-theme">Toggle Light/Dark Mode</button>
     <p>Dark and Light mode</p>
-    <link id="theme-style" rel="stylesheet" href="light-mode.css">
-    <script src="theme-toggle.js"></script>
+<script>
   
   <body style="background-color:pink;">
