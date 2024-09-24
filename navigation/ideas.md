@@ -972,4 +972,11 @@ permalink: /ideas/
     <p>Dark and Light mode</p>
     <link id="theme-style" rel="stylesheet" href="light-mode.css">
     <script src="theme-toggle.js"></script>
-  
+
+> ## Theme-toggle is having problems connecting with the light-theme.js and dark-theme.js
+- Check if the files are conneced or if there is something wrong with the code and the problems
+- Check all theme switch buttons and if they are made correctly.
+
+# Update
+- The theme-toggle.js is working properly butt still not connecting with the button in index.md and other places I have it.
+- I Substituted my background to pink to match my new teammate while I work on the button.
