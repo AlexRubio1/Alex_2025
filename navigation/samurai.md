@@ -956,3 +956,5 @@ permalink: /samurai/
           }            
         }
     document.getElementById('canvas').addEventListener("click",fullscreen)
+
+  <body style="background-color:pink;">

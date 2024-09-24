@@ -961,8 +961,6 @@ permalink: /ideas/
 
 ## New Ideas (Dark/Light) Theme Switch button
 
-
-
 <html lang="en">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -980,3 +978,7 @@ permalink: /ideas/
 # Update
 - The theme-toggle.js is working properly butt still not connecting with the button in index.md and other places I have it.
 - I Substituted my background to pink to match my new teammate while I work on the button.
+
+
+
+  <body style="background-color:pink;">

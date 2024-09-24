@@ -376,3 +376,6 @@ permalink: /snake/
         }
     })();
 </script>
+
+
+  <body style="background-color:pink;">
