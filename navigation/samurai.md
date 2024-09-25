@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Ideas
-description: Place for possible ideas/games I wanted to create
+title: Samurai Game
+description: Samurai Game that I've been working on instead of the samurai game.
 permalink: /samurai/
 ---
 
@@ -956,5 +956,3 @@ permalink: /samurai/
           }            
         }
     document.getElementById('canvas').addEventListener("click",fullscreen)
-
-  <body style="background-color:pink;">
