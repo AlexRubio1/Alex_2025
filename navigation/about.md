@@ -6,7 +6,7 @@ permalink: /Rubios_about/
 
 # About Me
 
-Hello! I’m passionate about coding, sports, and family/friends. I 🚀 each day while exploring new technologies, and improving my dveryday skills
+Hello! I’m passionate about coding, sports, and family/friends. I 🚀 each day while exploring new technologies, and improving my everyday skills
 
 > **Favorite Quote:**
 > *"For I consider that the sufferings of this present time are not worth comparing with the glory that is going to be revealed to us"* — Romans 8:18
@@ -63,24 +63,6 @@ div.scroll-container img {
    <img src="../images/about/Rubio7.jpg" alt="Inseason football" width="350" height="400">
   <img src="../images/about/Rubio8.jpg" alt="Inseason football" width="300" height="400">
 </div>
-
-
-
-> **Fun Facts about me**
-
-- I Started sports at a young age starting with basketball then going to football 🏈🏀
-
-- I Lived in California my whole life while my parents lived in mexico for half their life 🇲🇽
-
-- My hobbys are hanging out with my friends and family, playing videogames, and watching the nfl 🏈
-
-- I love going to the beach, im very outgoing 🏖️
-
-- I have 4 pets, 2 cats and 2 dogs 🐈🐶
-
-
-
-
 
 
 
