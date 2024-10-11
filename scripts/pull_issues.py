@@ -6,6 +6,7 @@ import json
 from datetime import date
 
 
+
 def generate_markdown_file(issue_data, file_path, course):
     """
     Generate a Markdown file for a GitHub issue.
