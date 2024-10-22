@@ -8,6 +8,26 @@ permalink: /samurai/
 > **Possible samurai Game**
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <style>
     #canvas {
         margin: 0;
@@ -43,7 +63,6 @@ permalink: /samurai/
     // Health
     let lives = 3;
     let dmgDebounce = 0;
-    let swordSound = 0;
     // Ultimate
     let ultActive = false;
     let ultPercentage = 0;
@@ -53,12 +72,15 @@ permalink: /samurai/
     let ultBlurDebounce = 0;
     //Menu debounce
     let menuDebounce = 0;
+    let swordSound = 0;
     // Enemy Speed
     let enemySpeed = 0.25;
     let enemyCap = 3;
+    //timer
+    let lastUpdateTime = Date.now();
     // Define the Player class
     class Player {
-        constructor() {
+        constructor(fight) {
             // Initial position and velocity of the player
             this.position = {
                 x: pSpawnX,
@@ -69,13 +91,80 @@ permalink: /samurai/
                 y: 0
             };
             // Dimensions of the player
-            this.width = 30;
-            this.height = 30;
+            this.width = 20;
+            this.height =30;
+            this.spriteSheet = new Image();
+            this.spriteSheet.src = "{{site.baseurl}}/images/Samurai_sprite-sheet.png";
+            //"{{site.baseurl}}/images/Samurai_sprite-sheet.png
+             // Animation properties
+            // Position on SpriteSheet
+            this.normalPositionWidth = 100; //3rd Row first Column
+            this.normalPositionHeight = 500;
+            this.fightPositionWidth = 710; // 4rd Row 3rd Column
+            this.fightPositionHeight = 700;
+            this.scaleWidth =100;
+            this.scaleHeight = 80;
+            // Timing for frame updates
+            this.frameInterval = 100;
+            this.lastFrameUpdate = Date.now();
+            //time for sprite
+            this.frameDuration=1000;
+            this.currentTime=0;
+            this.elapsedTime=0;
+            this.swordDrawVar=false;
+            this.loaded = false;
+            //funtions for SpriteSheet errors
+            this.spriteSheet.onload = () => {
+                console.log("Sprite sheet loaded correctly");
+                this.loaded = true;
             }
-        // Method to draw the player on the canvas
+            this.spriteSheet.onerror = () => {
+                console.log("Error Loading Sprite Sheet");
+            }
+        }
+        //set sword
+        swordDraw(swordDrawVar=false){
+            console.log("Set the swordDraw Variable");
+            this.swordDrawVar=swordDrawVar;
+            if(this.swordDrawVar)
+               this.currentTime=Date.now();
+        }
+        //Draw Function
         draw() {
-            c.fillStyle = 'light green';
-            c.fillRect(this.position.x, this.position.y, this.width, this.height);
+            if (!this.loaded)return;
+            //c.fillStyle = 'black';
+            //c.fillRect(this.position.x, this.position.y, this.width, this.height);
+            // Clear the rect
+            //c.clearRect(0,0,canvas.width,canvas.height);
+            //draw scaled Sprite, size of Sprite is 280W x 180H
+            //Adjust the position of the sprite so it can be in front of the enemies by 100W and 40H
+            // Scale the Sprite to 100W and 80H
+            if (this.swordDrawVar){
+                console.log("Sword was Drawen");
+                this.elpasedTime=this.currentTime-lastUpdateTime;
+                console.log("currenttime",this.currentTime);
+                console.log("lastUpdateTime",lastUpdateTime);
+                console.log("this.elapsedtime",this.elapsedTime);
+                if(this.elapsedTime >= 1000 ){
+                    console.log("1s have passed");
+                    this.swordDrawVar = false;
+                    lastUpdateTime=Date.now();
+                }else{
+                        console.log("1s has not passed, keep sword drawen");
+                        this.swordDrawVer=true;
+                }
+            }
+            if(this.swordDrawVar ){
+                //fighting position
+                console.log("Draw Sword");
+                c.drawImage(this.spriteSheet,this.fightPositionWidth,this.fightPositionHeight,280,180,this.position.x-70,this.position.y-40,100,80);
+                this.lastUpdateTime = Date.now();
+                this.elapsedTime = this.currentTime-this.lastUpdateTime;
+            }
+            else
+               //normal position
+               c.drawImage(this.spriteSheet,this.normalPositionWidth,this.normalPositionHeight,280,180,this.position.x-70,this.position.y-40,100,80);
+               this.swordDrawVar=false;
         }
         // Method to update the player position and velocity
         update() {
@@ -269,13 +358,13 @@ permalink: /samurai/
     let image = new Image();
     let imageTube = new Image();
     let imageBlock = new Image();
+    let imageHeart = new Image();
+    let imageEnemy = new Image();
     //--
     // NEW CODE - ADD IMAGES FOR BACKGROUND
     //--
     let imageBackground = new Image();
     let imageHills = new Image();
-    let imageEnemy = new Image();
-    let imageHeart = new Image();
     image.src = 'https://samayass.github.io/samayaCSA/images/platform.png';
     imageTube.src = 'https://samayass.github.io/samayaCSA/images/tube.png';
     imageBlock.src = 'https://samayass.github.io/samayaCSA/images/box.png';
@@ -320,6 +409,7 @@ permalink: /samurai/
         }
     }
     player = new Player();
+    lastUpdateTime = Date.now();
     enemy1 = new Enemy(imageEnemy);
     let enemyHealth1 = 3;
     enemy1.position.x = 800;
@@ -359,6 +449,7 @@ permalink: /samurai/
     let pickupSound;
     let damageSound;
     let swordhitSound;
+    let swordhitSound2;
     let loseSound;
     let gameMusic;
     let ultReadySound;
@@ -376,9 +467,6 @@ permalink: /samurai/
     //Sounds
     attackSound = new sound("{{site.baseurl}}/images/swinging-staff-whoosh.mp3");
     pickupSound = new sound("{{site.baseurl}}/images/pickup.mp3");
-    damageSound = new sound("{{site.baseurl}}/images/ough.mp3");
-    swordhitSound = new sound("{{site.baseurl}}/images/sword-hit.mp3");
-    swordhitSound2 = new sound("{{site.baseurl}}/images/sword-hit.mp3");
     loseSound = new sound("{{site.baseurl}}/images/lose-sound.wav");
     ultReadySound = new sound("{{site.baseurl}}/images/ultimate-ready.mp3");
     ultSound = new sound("{{site.baseurl}}/images/ultimate.mp3");
@@ -399,7 +487,7 @@ permalink: /samurai/
             c.fillStyle = 'black';
             c.font = "30px monospace";
             c.textAlign = "center";
-            c.fillText("Welcome To the samurai' Game",canvas.width/2,100);
+            c.fillText("Welcome To Alex and Travis' Game",canvas.width/2,100);
             c.fillText("Press SPACE to continue",canvas.width/2,200);
             c.fillText("Highscore: " + highscore,canvas.width/2,270);
             c.fillText("Score: " + score,canvas.width/2,300);
@@ -543,6 +631,7 @@ permalink: /samurai/
                     enemy.velocity.x = -12;
                     console.log("Contact Right");
                 }
+                damageSound = new sound("{{site.baseurl}}/images/ough.mp3");
                 damageSound.play();
                 if(lives == 3){
                     heart3.position.y = -45;
@@ -757,6 +846,7 @@ permalink: /samurai/
                 if(player.velocity.y == 0){player.velocity.y = -20;}
                 break;
             case 32:
+                console.log('space');
                 break;
         }
     });
@@ -782,11 +872,27 @@ permalink: /samurai/
             console.log("Nothin");
         }
     }
+    function addUltPercentage(){
+        if(ultPercentage < ultMaxPercentage){
+            ultPercentage += ultPercentageInc;
+            if(ultPercentage >= ultMaxPercentage){
+                ultReadySound.play();
+            }
+        }
+    }
+    function getDistance(x1, x2){
+        let x = x2 - x1;
+        return Math.sqrt(x*x);
+    }
     function respawnEnemy(enemy){
             enemy.position.x = Math.random() * ((border2.position.x - 100) - (border1.position.x+100)) + (border1.position.x+100);
             enemy.position.y = 200;
             enemy.velocity.x = 0;
             enemy.velocity.y = 0;
+            console.log(getDistance(enemy.position.x, player.position.x) < 100);
+            if(getDistance(enemy.position.x, player.position.x) < 100){
+                respawnEnemy(enemy);
+            }
         }
     addEventListener('keyup', ({ keyCode }) => {
         switch (keyCode) {
@@ -815,15 +921,6 @@ permalink: /samurai/
                     ultPercentage = 0;
                     dmgDebounce = 50;
                     ultBlurDebounce = 40;
-                    if(score == 5){
-                        respawnEnemy(enemy2);
-                    }else if(score >= 15 && score < 27){
-                        respawnEnemy(enemy3);
-                    }else if(score >= 25 && score < 53){
-                        respawnEnemy(enemy4);
-                    }else if(score >= 50 && score < 55){
-                        respawnEnemy(enemy5);
-                    }
                     if(facing == false){
                         enemyHealth1 = checkLeftEnemy(enemy1,enemyHealth1);
                         enemyHealth2 = checkLeftEnemy(enemy2,enemyHealth2);
@@ -838,7 +935,7 @@ permalink: /samurai/
                         enemyHealth5 = checkRightEnemy(enemy5,enemyHealth5);
                     }
                 }
-                function checkRightEnemy(enemy){
+                function checkRightEnemy(enemy,enemyHealth){
                     if(enemy.position.x > player.position.x && enemy.position.y < 500){
                         enemyHealth = 0;
                         if(enemyHealth == 0){
@@ -850,7 +947,7 @@ permalink: /samurai/
                     }
                     return enemyHealth;
                 }
-                function checkLeftEnemy(enemy){
+                function checkLeftEnemy(enemy,enemyHealth){
                     if(enemy.position.x < player.position.x && enemy.position.y < 500){
                         enemyHealth = 0;
                         if(enemyHealth == 0){
@@ -863,7 +960,7 @@ permalink: /samurai/
                     return enemyHealth;
                 }
                 break;
-            case 32: ///////////////FIX GAME OVER BUG TRAVIS YK WHAT IM TALKIN ABOUT.
+            case 32:
                 console.log('space');
                 enemyHealth1 = enemyDamage(enemy1,enemyHealth1);
                 enemyHealth2 = enemyDamage(enemy2,enemyHealth2);
@@ -875,60 +972,54 @@ permalink: /samurai/
                     if (facing == false && player.position.x + player.width/2 - enemy.position.x + enemy.width/2 < 100 && player.position.x + player.width/2 - enemy.position.x + enemy.width/2 > 0 && player.position.y + player.height/2 - 10 < enemy.position.y + enemy.height/2 && player.position.y + player.height/2 + 10 > enemy.position.y + enemy.height/2){ //left
                         enemy.velocity.y = -20;
                         enemy.velocity.x = -5;
+                        enemyHealth--;
                         if(swordSound == 0){
                             swordSound = 1;
+                            swordhitSound = new sound("{{site.baseurl}}/images/sword-hit.mp3");
                             swordhitSound.play();
                         }else{
                             swordSound = 0;
+                            swordhitSound2 = new sound("{{site.baseurl}}/images/sword-hit.mp3");
                             swordhitSound2.play();
                         }
-                        enemyHealth--;
                         console.log(enemyHealth);
                         console.log(player.position.x + player.width/2 - enemy.position.x + enemy.width/2);
                         if(enemyHealth == 0){
                             enemyHealth = 3;
                             powerupAdd(enemy.position.x, enemy.position.y);
                             respawnEnemy(enemy);
-                            if(ultPercentage < ultMaxPercentage){
-                                ultPercentage += ultPercentageInc;
-                                if(ultPercentage >= ultMaxPercentage){
-                                    ultReadySound.play();
-                                }
-                            }
+                            addUltPercentage()
                             score++;
                             if(score == 5){
                                 respawnEnemy(enemy2);
-                            }else if(score == 15){
+                            }else if(score >= 15 && score < 27){
                                 respawnEnemy(enemy3);
-                            }else if(score == 25){
+                            }else if(score >= 25 && score < 53){
                                 respawnEnemy(enemy4);
-                            }else if(score == 50){
+                            }else if(score >= 50 && score < 55){
                                 respawnEnemy(enemy5);
                             }
                         }
                     }else if (facing == true && enemy.position.x + enemy.width/2 - player.position.x + player.width/2 < 100 && enemy.position.x + enemy.width/2 - player.position.x + player.width/2 > 0 && player.position.y + player.height/2 - 10 < enemy.position.y + enemy.height/2 && player.position.y + player.height/2 + 10 > enemy.position.y + enemy.height/2){ //right
                         enemy.velocity.y = -20;
                         enemy.velocity.x = 5;
+                        enemyHealth--;
                         if(swordSound == 0){
                             swordSound = 1;
+                            swordhitSound = new sound("{{site.baseurl}}/images/sword-hit.mp3");
                             swordhitSound.play();
                         }else{
                             swordSound = 0;
+                            swordhitSound2 = new sound("{{site.baseurl}}/images/sword-hit.mp3");
                             swordhitSound2.play();
                         }
-                        enemyHealth--;
                         console.log(enemyHealth);
                         console.log(enemy.position.x + enemy.width/2 - player.position.x + player.width/2);
                         if(enemyHealth == 0){
                             enemyHealth = 3;
                             powerupAdd(enemy.position.x, enemy.position.y);
                             respawnEnemy(enemy);
-                            if(ultPercentage < ultMaxPercentage){
-                                ultPercentage += ultPercentageInc;
-                                if(ultPercentage >= ultMaxPercentage){
-                                    ultReadySound.play();
-                                }
-                            }
+                            addUltPercentage()
                             score++;
                             if(score == 5){
                                 respawnEnemy(enemy2);
@@ -956,3 +1047,10 @@ permalink: /samurai/
           }            
         }
     document.getElementById('canvas').addEventListener("click",fullscreen)
+
+
+
+
+
+
+
