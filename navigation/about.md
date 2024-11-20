@@ -37,20 +37,7 @@ Hello! I’m passionate about coding, sports, and family/friends. I 🚀 each da
 
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-div.scroll-container {
-  background-color: #333;
-  overflow: auto;
-  white-space: nowrap;
-  padding: 10px;
-}
-
-div.scroll-container img {
-  padding: 10px;
-}
-</style>
-
-<h2>Image Gallery of my sports journey and my family</h2>
+<h2>Image Gallery of My Sports Journey and My Family</h2>
 <p>Use the horizontal scrollbar to see the other images.</p>
 
 <div class="scroll-container">
@@ -58,13 +45,25 @@ div.scroll-container img {
   <img src="../images/about/Rubio1.jpg" alt="Sports Beginning" width="350" height="400">
   <img src="../images/about/Rubio2.jpg" alt="Basketball at age 9" width="350" height="400">
   <img src="../images/about/Rubio3.jpg" alt="The beginning of football" width="600" height="400">
-  <img src="../images/about/Rubio6.jpg" alt="Inseason 
-  football" width="500" height="400">
-   <img src="../images/about/Rubio7.jpg" alt="Inseason football" width="350" height="400">
-  <img src="../images/about/Rubio8.jpg" alt="Inseason football" width="300" height="400">
+  <img src="../images/about/Rubio6.jpg" alt="In-season football" width="500" height="400">
+  <img src="../images/about/Rubio7.jpg" alt="In-season football" width="350" height="400">
+  <img src="../images/about/Rubio8.jpg" alt="In-season football" width="300" height="400">
 </div>
 
+<style>
+  .scroll-container {
+    display: flex;
+    overflow-x: auto; /* Enables horizontal scrolling */
+    white-space: nowrap; /* Prevents wrapping to new lines */
+    padding: 10px;
+    gap: 10px; /* Adds space between images */
+  }
 
+  .scroll-container img {
+    flex-shrink: 0; /* Prevents images from shrinking */
+    margin-right: 10px; /* Optional: adds extra spacing between images */
+  }
+</style>
 
 
 <style>
