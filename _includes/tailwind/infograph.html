@@ -1,5 +1,6 @@
 <div>
     {% assign data = site.data[page.infoGraph] %}
+  
     <div class="container">
       <!-- Header Section -->
       <div class="p-6 rounded-lg shadow-md">
@@ -17,11 +18,18 @@
                 <img src="{{ site.baseurl }}/images/{{ topic.image }}" alt="{{ topic.alt }}" class="rounded-lg mx-auto h-40 object-cover">
               </a>
             </div>
+  
             <!-- Key Points Column -->
-            <div>
+            <div class="col-span-2">
               <h3 class="text-xl font-semibold mb-2">{{ topic.title }}</h3>
               <ul class="list-disc list-inside">
-                <!-- Loop through kepoints within Topic -->
                 {% for point in topic.keyPoints %}
                   <li>{{ point }}</li>
                 {% endfor %}
+              </ul>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
