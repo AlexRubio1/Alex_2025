@@ -5,7 +5,7 @@ description: Home
 hide: true
 ---
 {% include nav/home.html %}
-My journey starts here Alex Rubio!
+
 
 <!--- Concatenation of site URL to frontmatter image  --->
 {% assign sprite_file = site.baseurl | append: page.image %}
@@ -21,6 +21,30 @@ My journey starts here Alex Rubio!
 <!--- Embedded Cascading Style Sheet (CSS) rules, 
         define how HTML elements look 
 --->
+
+<!-- Hero Section -->
+<header style="padding: 2rem; text-align: center; background: #222; color: white;">
+  <h1 style="font-size: 2.5rem; margin-bottom: 0.5rem;">Alex Rubio</h1>
+  <p style="font-size: 1.2rem; max-width: 600px; margin: auto;">
+    Full Stack Developer & CS Principles Enthusiast — focused on real-world impact, collaboration, and clean code.
+  </p>
+  <a href="/resume.pdf" target="_blank" style="display: inline-block; margin-top: 1rem; padding: 0.6rem 1.2rem; background: #4CAF50; color: white; border-radius: 10px; text-decoration: none;">📄 View My Resume</a>
+</header>
+
+<!-- About Section -->
+<section style="padding: 2rem; max-width: 850px; margin: auto; line-height: 1.6; color: white;">
+  <h2>About Me</h2>
+  <p>
+  I'm a high school CSP student with experience in <strong>JavaScript, CSS, and Java, ... ect</strong>, and backend skills with <strong>Flask, SQLite, and DataTables. Including delpoyment with AWS</strong>.
+    I've contributed to projects like our school's "Night at the Museum" site and helped lead our Open Coding Society.
+  </p>
+  <p>
+    I love turning ideas into working software, especially when it involves deployment, teamwork, and solving real problems.    I've contributed to projects like our school's "Night at the Museum" site and helped lead our Open Coding Society.
+  </p>
+  <p>
+    I'm also active in my school’s Open Coding Society, where I help lead projects and support collaboration.
+  </p>
+</section>
 
 <style>
 
@@ -187,17 +211,3 @@ My journey starts here Alex Rubio!
   });
 
 </script>
-
-
-
-<html lang="en">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Light and Dark Mode</title>
-    <link id="theme-stylesheet" rel="stylesheet" href="light-mode.css">
-    <button id="toggle-theme">Toggle Light/Dark Mode</button>
-    <p>Dark and Light mode</p>
-    <link id="theme-style" rel="stylesheet" href="light-mode.css">
-    <script src="theme-toggle.js"></script>
-  
-  <body style="background-color:pink;">
