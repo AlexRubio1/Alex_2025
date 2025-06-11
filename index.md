@@ -28,7 +28,7 @@ hide: true
   <p style="font-size: 1.2rem; max-width: 600px; margin: auto;">
     Full Stack Developer & CS Principles Enthusiast — focused on real-world impact, collaboration, and clean code.
   </p>
-  <a href="/resume.pdf" target="_blank" style="display: inline-block; margin-top: 1rem; padding: 0.6rem 1.2rem; background: #4CAF50; color: white; border-radius: 10px; text-decoration: none;">📄 View My Resume</a>
+<a href="https://docs.google.com/document/d/1E0gqGuP5nHDs0nCexEBJC94geRqOIELrdre9b1Io_Fs/view?usp=sharing" target="_blank" rel="noopener noreferrer" style="display: inline-block; margin-top: 1rem; padding: 0.6rem 1.2rem; background: #4CAF50; color: white; border-radius: 10px; text-decoration: none;">📄 View My Resume</a>
 </header>
 
 <!-- About Section -->
