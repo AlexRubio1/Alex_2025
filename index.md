@@ -33,17 +33,30 @@ hide: true
 
 <!-- About Section -->
 <section style="padding: 2rem; max-width: 850px; margin: auto; line-height: 1.6; color: white;">
-  <h2>About Me</h2>
+  <h2 style="color: white;">About Me</h2>
+
   <p>
-  I'm a high school CSP student with experience in <strong>JavaScript, CSS, and Java, ... ect</strong>, and backend skills with <strong>Flask, SQLite, and DataTables. Including delpoyment with AWS</strong>.
-    I've contributed to projects like our school's "Night at the Museum" site and helped lead our Open Coding Society.
+    I'm a full-stack developer and student at Del Norte High School passionate about building real-world software. I’ve led backend development and deployment for projects with model integration, API configuration, and AWS readiness. My journey started in game dev with sprite animation on Roblox, and I now focus on scalable systems and collaborative coding.
   </p>
-  <p>
-    I love turning ideas into working software, especially when it involves deployment, teamwork, and solving real problems.    I've contributed to projects like our school's "Night at the Museum" site and helped lead our Open Coding Society.
-  </p>
-  <p>
-    I'm also active in my school’s Open Coding Society, where I help lead projects and support collaboration.
-  </p>
+
+  <h3 style="color: white; margin-top: 1.5rem;">💻 Technical Skill Kit (TKS)</h3>
+  <ul>
+    <li><strong>Frontend Dev:</strong> HTML, CSS, JavaScript, Java; I design responsive interfaces and build interactive user experiences.</li>
+    <li><strong>Backend Dev:</strong> Flask, SQLite, REST APIs; I structure server logic and connect data flow between front and backend cleanly.</li>
+    <li><strong>Deployment Ops:</strong> Nginx, AWS, Git, CI/CD; I manage code shipping, server config, and cloud hosting pipelines.</li>
+    <li><strong>Data Handling:</strong> DataTables, Model Integration, Server Config; I structure data pipelines and connect predictive models to APIs.</li>
+    <li><strong>Projects:</strong> StudyBuddy, PowayData, DataScience, Draw.io Clone; all collaborative or open-source tools built to solve real problems.</li>
+  </ul>
+  <p><em>TKS: Code, Deploy, Scale</em></p>
+
+  <h3 style="color: white; margin-top: 1.5rem;">🤝 Soft Skill Kit (SSK)</h3>
+  <ul>
+    <li><strong>Team Collaboration:</strong> Co-scrum of an Open Coding Society project, Co-founder of RobloxCoding; I work with peers to lead group projects and mentor younger coders.</li>
+    <li><strong>Problem Solving:</strong> Debugging APIs, backend-to-model issues; I enjoy breaking down bugs and turning roadblocks into working features.</li>
+    <li><strong>Initiative & Drive:</strong> Self-starter projects and GitHub repos; everything I build is open-source and designed to help students learn and collaborate.</li>
+    <li><strong>Open Source Ethos:</strong> All code public to help student devs grow; I believe sharing work fuels innovation, especially in student communities.</li>
+  </ul>
+  <p><em>SSK: Lead, Solve, Share</em></p>
 </section>
 
 <style>
