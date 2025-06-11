@@ -224,3 +224,5 @@ hide: true
   });
 
 </script>
+
+- [Final Blogs](https://alexrubio1.github.io/Alex_2025/2025/04/21/lesson-pathway_IPYNB_2_.html)
